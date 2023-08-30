@@ -11,7 +11,7 @@ namespace Market.Shared.Entities
     {
         public int Id { get; set; }
         [Display(Name = "Pais")]
-        [MaxLength(100)]
+        [MaxLength(100, ErrorMessage ="El campo {0} debe tener màximo {1} caràcteres")]
         [Required(ErrorMessage ="El campo {0} es obligatorio.")]
         public string Name { get; set; } = null;
     }
