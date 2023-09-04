@@ -13,6 +13,9 @@ builder.Services.AddSwaggerGen();
 //Inyecciòn de dependencias a SQL Server
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=DefaultConnection"));
 
+//Inyecciòn de dependencias
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:8000") });
+
 
 var app = builder.Build();
 
