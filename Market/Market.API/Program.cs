@@ -1,4 +1,5 @@
 using Market.API.Data;
+using Market.WEB.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,9 +14,13 @@ builder.Services.AddSwaggerGen();
 //Inyecciòn de dependencias a SQL Server
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=DefaultConnection"));
 
-//Inyecciòn de dependencias
+
+
+//Inyecciòn de dependencias para consumir la API desde la web
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:8000") });
 
+//
+builder.Services.AddScoped<IRepository, Repository > ();
 
 var app = builder.Build();
 
@@ -32,4 +37,17 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapControllers();
+
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowCredentials());
+
 app.Run();
+
+
+
+
+

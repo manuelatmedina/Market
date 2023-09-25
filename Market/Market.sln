@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Market.API", "Market.API\Ma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Market.WEB", "Market.WEB\Market.WEB.csproj", "{989A0C57-A642-4772-A7E3-F79B387E0833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.MAUI", "Market.MAUI\Market.MAUI.csproj", "{2665C4D2-1795-4F79-9022-3457AC53E121}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Market.MAUI", "Market.MAUI\Market.MAUI.csproj", "{2665C4D2-1795-4F79-9022-3457AC53E121}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

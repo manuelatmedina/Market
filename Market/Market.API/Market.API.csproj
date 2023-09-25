@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Market.Shared\Market.Shared.csproj" />
+    <ProjectReference Include="..\Market.WEB\Market.WEB.csproj" />
   </ItemGroup>
 
 </Project>
