@@ -79,11 +79,11 @@ namespace Market.WEB.Repositories
             return new HttpResponseWrapper<object>(null, !responseHttp.IsSuccessStatusCode, responseHttp);
         }
 
-        public async Task<HttpResponseWrapper<object>> Delete<T>(string url)
+        public async Task<HttpResponseWrapper<object>> Delete(string url)
         {
-            var responseHttp = await _httpClient.DeleteAsync(url);
-           
-            return new HttpResponseWrapper<object>(null,!responseHttp.IsSuccessStatusCode,responseHttp);
+            var responseHTTP = await _httpClient.DeleteAsync(url);
+            return new HttpResponseWrapper<object>(null, !responseHTTP.IsSuccessStatusCode, responseHTTP);
         }
+
     }
 }
